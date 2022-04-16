@@ -1,6 +1,7 @@
 import React from 'react';
-import '../App.css';
 import { SidebarData } from './SidebarData';
+import './sidebar.css'
+import { Link } from 'react-router-dom'
 
 
 function Sidebar() {
@@ -13,15 +14,16 @@ function Sidebar() {
               key={key}
               className='row'
               id={window.location.pathname === val.link ? "active" : ""}
-              onClick={() => {
-                window.location.pathname = val.link
-              }}>
-              <div id="icon">
-                {val.icon}
-              </div>
-              <div id="title">
-                {val.title}
-              </div>
+            >
+              <Link to={val.path}>
+                <div id="icon">
+                  {val.icon}
+                </div>
+                <div id="title">
+                  {val.title}
+                </div>
+
+              </Link>
             </li>
           )
         })}

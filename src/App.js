@@ -1,11 +1,23 @@
+import { React } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
-import Sidebar from './Components/Sidebar';
+import Header from './components/header/Header';
+import Sidebar from './components/sidebar/Sidebar';
+import Footer from './components/footer/Footer.jsx';
+import Routes from './components/Routes';
 
 function App() {
   return (
-    <div className="App">
-      <Sidebar />
-    </div>
+    <>
+      <BrowserRouter>
+        <Header />
+        <Footer />
+        <div className='container'>
+          <Sidebar />
+          <Routes />
+        </div>
+      </BrowserRouter >
+    </>
   );
 }
 
